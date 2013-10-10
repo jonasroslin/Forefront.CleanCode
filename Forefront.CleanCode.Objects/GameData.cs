@@ -31,7 +31,7 @@ namespace Forefront.CleanCode.Objects
         public void CommitANewTry()
         {
             NumberOfTries++;
-            NumberOfGlobalTries = NumberOfGlobalTries + NumberOfTries;
+            NumberOfGlobalTries++;// = NumberOfGlobalTries + NumberOfTries;
         }
     }
 }

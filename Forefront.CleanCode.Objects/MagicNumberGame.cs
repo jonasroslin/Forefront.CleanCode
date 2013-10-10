@@ -5,17 +5,16 @@ namespace Forefront.CleanCode.Objects
     public class MagicNumberGame
     {
         private readonly GameData _gameData;
-        private readonly IPrint _printer;
+        private readonly IPrinter _printer;
 
         public MagicNumberGame()
         {
-            _printer = new Writer.Console();
+            _printer = new Printers.ConsolePrinter();
             _gameData = new GameData();
         }
 
         public void IncreaseTotalNumberOfGamesByOne()
         {
-            _gameData.NumberOfGlobalTries = _gameData.NumberOfGlobalTries + _gameData.NumberOfTries;
             _gameData.NumberOfGames++;
         }
 
@@ -27,10 +26,10 @@ namespace Forefront.CleanCode.Objects
 
         public void PrintResult()
         {
-            _printer.PrintLine(string.Format("Correct after {0} times", _gameData.NumberOfTries));
-            _printer.PrintLine(string.Format("Correct number {0}", _gameData.MagicNumber));
+            _printer.PrintLine("Correct after {0} times", _gameData.NumberOfTries);
+            _printer.PrintLine("Correct number {0}", _gameData.MagicNumber);
             float avg = _gameData.GetAverageNumbersOfTries();
-            _printer.PrintLine(string.Format("Avg: {0}", avg));
+            _printer.PrintLine("Avg: {0}", avg);
         }
 
         public void LetTheUserGuessANumberUntilTheNumberIsCorrect()
@@ -52,7 +51,7 @@ namespace Forefront.CleanCode.Objects
             return line != null && line.ToLower() == "y";
         }
 
-        private int ReadInputNumberFromUser()
+        private static int ReadInputNumberFromUser()
         {
             var readLine = Console.ReadLine();
             int inputNumber = Convert.ToInt16(readLine);

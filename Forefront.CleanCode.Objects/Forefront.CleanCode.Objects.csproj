@@ -41,10 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Writer\AddHelloWorld.cs" />
-    <Compile Include="Writer\Console.cs" />
+    <Compile Include="Printers\ConsolePrinter.cs" />
     <Compile Include="GameData.cs" />
-    <Compile Include="IPrint.cs" />
+    <Compile Include="IPrinter.cs" />
     <Compile Include="MagicNumberGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
