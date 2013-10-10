@@ -45,9 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_creating_game_data.cs" />
+    <Compile Include="When_using_game_data_to_calculate_average_number_of_tries_before_the_correct_number_was_provided.cs" />
+    <Compile Include="When_using_game_data_to_commit_a_new_try.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

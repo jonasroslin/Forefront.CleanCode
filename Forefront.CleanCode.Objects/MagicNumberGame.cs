@@ -16,12 +16,12 @@ namespace Forefront.CleanCode.Objects
         public void IncreaseTotalNumberOfGamesByOne()
         {
             _gameData.NumberOfGlobalTries = _gameData.NumberOfGlobalTries + _gameData.NumberOfTries;
+            _gameData.NumberOfGames++;
         }
 
         public void StartANewGame()
         {
             _gameData.GenerateNewRandonNumber();
-            _gameData.NumberOfGames++;
             _gameData.NumberOfTries = 0;
         }
 
@@ -29,7 +29,7 @@ namespace Forefront.CleanCode.Objects
         {
             _printer.PrintLine(string.Format("Correct after {0} times", _gameData.NumberOfTries));
             _printer.PrintLine(string.Format("Correct number {0}", _gameData.MagicNumber));
-            float avg = _gameData.GetAvgCorrectValue();
+            float avg = _gameData.GetAverageNumbersOfTries();
             _printer.PrintLine(string.Format("Avg: {0}", avg));
         }
 
@@ -41,7 +41,7 @@ namespace Forefront.CleanCode.Objects
                 _printer.Print("Enter a number: ");
                 inputNumber = ReadInputNumberFromUser();
                 CheckTheResultOfInputNumberAndPrintResult(inputNumber);
-                _gameData.NumberOfTries++;
+                _gameData.CommitANewTry();
             }
         }
 
@@ -50,11 +50,6 @@ namespace Forefront.CleanCode.Objects
             _printer.Print("One more time? Y/N ");
             var line = Console.ReadLine();
             return line != null && line.ToLower() == "y";
-        }
-
-        public void AddTotalNumberOfGames()
-        {
-            _gameData.EnterANewTry();
         }
 
         private int ReadInputNumberFromUser()

@@ -26,6 +26,12 @@ namespace Forefront.CleanCode.Tests
         {
             _gameData.NumberOfTries.Should().Be(0);
         }
+
+        [Test]
+        public void Number_of_global_tries_should_be_zero()
+        {
+            _gameData.NumberOfGlobalTries.Should().Be(0);
+        }
         
     }
 }

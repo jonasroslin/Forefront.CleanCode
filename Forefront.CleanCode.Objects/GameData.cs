@@ -23,13 +23,14 @@ namespace Forefront.CleanCode.Objects
             MagicNumber = random.Next(1, 10);
         }
 
-        public float GetAvgCorrectValue()
+        public float GetAverageNumbersOfTries()
         {
             return NumberOfGlobalTries / (float)NumberOfGames;
         }
 
-        public void EnterANewTry()
+        public void CommitANewTry()
         {
+            NumberOfTries++;
             NumberOfGlobalTries = NumberOfGlobalTries + NumberOfTries;
         }
     }
