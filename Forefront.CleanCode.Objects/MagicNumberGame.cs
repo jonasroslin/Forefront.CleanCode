@@ -32,7 +32,7 @@ namespace Forefront.CleanCode.Objects
             _printer.PrintLine("Avg: {0}", avg);
         }
 
-        public void LetTheUserGuessANumberUntilTheNumberIsCorrect()
+        public void LetTheUserGuessOneNumberUntilTheNumberIsCorrect()
         {
             var inputNumber = new int();
             while (inputNumber != _gameData.MagicNumber)
