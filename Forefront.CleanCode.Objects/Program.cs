@@ -9,7 +9,7 @@
             do
             {
                 magicNumberGame.StartANewGame();
-                magicNumberGame.LetTheUserGuessANumberUntilTheNumberIsCorrect();
+                magicNumberGame.LetTheUserGuessOneNumberUntilTheNumberIsCorrect();
                 magicNumberGame.IncreaseTotalNumberOfGamesByOne();
                 magicNumberGame.PrintResult();
 
